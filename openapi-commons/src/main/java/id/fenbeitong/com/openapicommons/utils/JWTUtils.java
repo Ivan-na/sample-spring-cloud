@@ -97,7 +97,7 @@ public class JWTUtils {
      * @author Created by ivan on 上午11:47 18-11-8.
      * <p>check Token
      **/
-    public JWTResult checkToken(String token) throws Exception {
+    public JWTResult checkToken(String token) {
         try {
             Claims claims = Jwts.parser().setSigningKey(pubKey).parseClaimsJws(token).getBody();
             String sub = claims.get("sub", String.class);
@@ -124,7 +124,7 @@ public class JWTUtils {
      * @author Created by ivan on 上午11:48 18-11-8.
      * @version 1.0
      **/
-    static class JWTResult {
+    public static class JWTResult {
         // true/false
         private boolean status;
         // user input

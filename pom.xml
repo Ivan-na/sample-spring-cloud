@@ -18,6 +18,7 @@
   </parent>
 
   <modules>
+    <module>openapi-commons</module>
     <module>openapi-configuration</module>
     <module>openapi-discovery</module>
     <module>openapi-gateway</module>

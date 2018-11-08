@@ -1,22 +1,27 @@
 server:
   port: 8080
-#eureka:
-#  client:
-#    serviceUrl:
-#     defaultZone: http://localhost:8765/eureka/
+eureka:
+  client:
+    serviceUrl:
+     defaultZone: http://localhost:8765/eureka/
 spring:
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
-    consul:
-      host: 172.17.0.2
-      port: 8500
-      discovery:
-        register: true
-        service-name: ${spring.application.name}
-        health-check-path: /actuator/health
-        health-check-interval: 15s
-        tags: open-api-/${spring.application.name}
-        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+      routes:
+      - id: baidu
+        uri: http://www.baidu.com
+        predicates:
+        - Path=/baidu/**
+#    consul:
+#      host: 172.17.0.2
+#      port: 8500
+#      discovery:
+#        register: true
+#        service-name: ${spring.application.name}
+#        health-check-path: /actuator/health
+#        health-check-interval: 15s
+#        tags: open-api-/${spring.application.name}
+#        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}

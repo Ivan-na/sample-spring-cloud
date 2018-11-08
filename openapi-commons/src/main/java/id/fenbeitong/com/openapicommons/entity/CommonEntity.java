@@ -14,17 +14,4 @@ import java.lang.reflect.ParameterizedType;
  **/
 public abstract class CommonEntity<T> {
 
-    protected final Logger LOGGER = LogUtils.get(this.getRuntimeClass());
-
-    /**
-     * @return java.lang.Class
-     * @author Created by ivan on 上午11:39 18-11-8.
-     * <p>Locate runtime Class Type
-     **/
-    @SuppressWarnings("unchecked")
-    private Class getRuntimeClass() {
-        ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
-        return (Class<T>) pt.getActualTypeArguments()[0];
-    }
-
 }

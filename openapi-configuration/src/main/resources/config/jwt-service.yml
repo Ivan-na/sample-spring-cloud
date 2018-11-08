@@ -1,4 +1,4 @@
-servet:
+server:
   port: 8333
 spring:
   cloud:
