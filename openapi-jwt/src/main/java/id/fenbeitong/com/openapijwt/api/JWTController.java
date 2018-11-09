@@ -11,10 +11,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * JWTController
@@ -26,13 +25,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/jwt")
 @Api("JWT")
+@RefreshScope
 public class JWTController extends CommonController<JWTController> {
     // Atuh Service
     private AuthService authService;
 
+    @Value("${env.tag}")
+    private String envTag = "123";
+
     @Autowired
     public JWTController(AuthService authService) {
         this.authService = authService;
+    }
+
+    @ApiOperation(value = "Check Env tag", notes = "env tag")
+    @GetMapping("/msg")
+    public ResponseData checkEnvTag() {
+        if (StringUtils.isNotBlank(envTag)) {
+            return ResponseData.ok(envTag);
+        } else {
+            return ResponseData.fail("not Load");
+        }
     }
 
     /**

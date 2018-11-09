@@ -4,4 +4,10 @@ eureka:
   client:
     serviceUrl:
      defaultZone: http://localhost:8765/eureka/
-message: HEEEEEE!!
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+env:
+  tag: 999
