@@ -1,6 +1,12 @@
 spring:
   application:
-    name: jwt-service
+    name: JWT
   cloud:
     config:
       uri: http://localhost:8888
+#server:
+#  port: 8333
+#eureka:
+#  client:
+#    serviceUrl:
+#     defaultZone: http://localhost:8765/eureka/

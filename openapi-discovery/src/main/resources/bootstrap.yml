@@ -1,6 +1,6 @@
 spring:
   application:
-    name: discovery
+    name: DISCOVERY
   profiles:
     active: dev
   cloud:

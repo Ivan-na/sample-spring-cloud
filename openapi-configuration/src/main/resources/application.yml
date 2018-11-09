@@ -7,6 +7,6 @@ spring:
   profiles:
     active: native
   application:
-    name: configuration
+    name: CONFIGURATION
 server:
   port: 8888
