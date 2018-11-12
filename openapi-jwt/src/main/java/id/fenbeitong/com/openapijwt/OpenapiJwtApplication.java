@@ -14,7 +14,6 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
  **/
 @SpringBootApplication
 @EnableDiscoveryClient
-
 public class OpenapiJwtApplication {
 
     public static void main(String[] args) {
