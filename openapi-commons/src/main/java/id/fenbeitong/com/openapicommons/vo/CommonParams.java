@@ -1,5 +1,7 @@
 package id.fenbeitong.com.openapicommons.vo;
 
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
 /**
  * CommonParams
  * <p>TODO
@@ -7,7 +9,7 @@ package id.fenbeitong.com.openapicommons.vo;
  * @author Created by ivan on 下午5:13 18-11-12.
  * @version 1.0
  **/
-public abstract class CommonParams<T> implements java.io.Serializable {
+public class CommonParams<T> implements java.io.Serializable {
     private String accessToken;
     private String sign;
     private Long timestamp;
@@ -53,4 +55,5 @@ public abstract class CommonParams<T> implements java.io.Serializable {
     public void setEmployeeType(String employeeType) {
         this.employeeType = employeeType;
     }
+
 }

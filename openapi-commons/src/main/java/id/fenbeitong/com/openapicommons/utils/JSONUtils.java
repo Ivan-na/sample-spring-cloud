@@ -1,10 +1,14 @@
 package id.fenbeitong.com.openapicommons.utils;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.IOException;
 import java.io.StringWriter;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 /**
  * JSONUtils
@@ -36,6 +40,24 @@ public class JSONUtils {
             return mapper.readValue(jsonString, entityClass);
         } catch (Exception e) {
             throw new RuntimeException("JSON【" + jsonString + "】转对象时出错", e);
+        }
+    }
+
+    public static <T> T toList(String jsonString) {
+        try {
+            return mapper.readValue(jsonString, new TypeReference<List>() {
+            });
+        } catch (Exception e) {
+            throw new RuntimeException("JSON【" + jsonString + "】转列表时出错", e);
+        }
+    }
+
+    public static <T> T toBeanList(Class<T> entityClass, String jsonString) {
+        try {
+            mapper = new ObjectMapper().configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+            return mapper.readValue(jsonString, mapper.getTypeFactory().constructCollectionType(List.class, entityClass));
+        } catch (Exception e) {
+            throw new RuntimeException("JSON【" + jsonString + "】转对象列表时出错", e);
         }
     }
 
