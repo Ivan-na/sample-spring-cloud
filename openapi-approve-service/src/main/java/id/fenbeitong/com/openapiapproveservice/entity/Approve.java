@@ -1,15 +1,15 @@
-package id.fenbeitong.com.bizapproveservice.entity;
+package id.fenbeitong.com.openapiapproveservice.entity;
 
 import id.fenbeitong.com.openapicommons.entity.BizCommonEntity;
 
 /**
  * Approve
- * <p>TODO
+ * <p> TODO
  *
- * @author Created by ivan on 上午10:07 18-11-14.
  * @version 1.0
+ * Created by ivan on 18-11-14 - 下午5:45.
  **/
-public class Approve {
+public class Approve extends BizCommonEntity<Approve> {
     private String id;
 
     public Approve() {
@@ -21,9 +21,5 @@ public class Approve {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public void coverT() {
-
     }
 }

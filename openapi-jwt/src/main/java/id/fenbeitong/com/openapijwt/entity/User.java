@@ -10,7 +10,7 @@ import id.fenbeitong.com.openapicommons.entity.CommonEntity;
  * @author Created by ivan on 上午11:54 18-11-8.
  * @version 1.0
  **/
-public class User extends CommonEntity {
+public class User extends CommonEntity<User> {
     // Use for JWT compact
     private Long id;
 

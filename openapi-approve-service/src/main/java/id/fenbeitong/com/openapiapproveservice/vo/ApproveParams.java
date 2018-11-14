@@ -1,18 +1,18 @@
-package id.fenbeitong.com.bizapproveservice.vo;
+package id.fenbeitong.com.openapiapproveservice.vo;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import id.fenbeitong.com.openapicommons.vo.BizCommonParams;
 
 import java.util.List;
 
 /**
  * ApproveParams
- * <p>TODO
+ * <p> TODO
  *
- * @author Created by ivan on 下午7:37 18-11-13.
  * @version 1.0
+ * Created by ivan on 18-11-14 - 下午5:44.
  **/
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class ApproveParams {
     private Apply apply;
     private List<TripList> tripList;

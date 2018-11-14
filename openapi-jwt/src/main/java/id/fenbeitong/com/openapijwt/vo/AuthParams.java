@@ -1,5 +1,7 @@
 package id.fenbeitong.com.openapijwt.vo;
 
+import id.fenbeitong.com.openapicommons.vo.CommonParams;
+
 /**
  * AuthParams
  * <p>user auth params
@@ -7,7 +9,7 @@ package id.fenbeitong.com.openapijwt.vo;
  * @author Created by ivan on 下午2:40 18-11-8.
  * @version 1.0
  **/
-public class AuthParams {
+public class AuthParams extends CommonParams<AuthParams> {
     // access key
     private String accessKey;
     // customer id

@@ -163,7 +163,7 @@ public class JWTUtils {
             this.msg = msg;
         }
 
-        public boolean isStatus() {
+        public boolean getStatus() {
             return status;
         }
 

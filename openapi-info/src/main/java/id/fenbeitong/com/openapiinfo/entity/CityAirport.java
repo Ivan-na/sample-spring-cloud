@@ -2,7 +2,6 @@ package id.fenbeitong.com.openapiinfo.entity;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import id.fenbeitong.com.openapicommons.entity.BizCommonEntity;
 
 import java.util.List;
 
@@ -14,11 +13,8 @@ import java.util.List;
  * @version 1.0
  **/
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class CityAirport extends BizCommonEntity<CityAirport> {
+public class CityAirport {
     private List<City> cities;
-
-    public CityAirport() {
-    }
 
     public List<City> getCities() {
         return cities;
@@ -84,6 +80,17 @@ public class CityAirport extends BizCommonEntity<CityAirport> {
 
         public void setStationList(List<Airport> stationList) {
             this.stationList = stationList;
+        }
+
+        @Override
+        public String toString() {
+            return "City{" +
+                    "id='" + id + '\'' +
+                    ", name='" + name + '\'' +
+                    ", pinyin='" + pinyin + '\'' +
+                    ", description='" + description + '\'' +
+                    ", stationList=" + stationList +
+                    '}';
         }
     }
 
