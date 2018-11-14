@@ -4,9 +4,11 @@ import id.fenbeitong.com.bizapproveservice.entity.Approve;
 import id.fenbeitong.com.bizapproveservice.vo.ApproveParams;
 import id.fenbeitong.com.openapicommons.entity.BizCommonEntity;
 import id.fenbeitong.com.openapicommons.utils.JSONUtils;
+import id.fenbeitong.com.openapicommons.vo.BizCommonParams;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,13 +26,11 @@ public class ApproveApi {
 
     @ApiOperation(value = "Check Env tag", notes = "env tag")
     @PostMapping("/create")
-    public BizCommonEntity<Approve> createApprove(ApproveParams approveParams) {
-
-        String jsonParma = JSONUtils.toJson(approveParams);
+    public BizCommonEntity<Approve> createApprove(@RequestBody BizCommonParams<ApproveParams> bizCommonParams) {
+        String jsonParma = bizCommonParams.toJsonWithLowerCase(ApproveParams.class);
         // CALL SERVICE
         String jsonResult = "{\"request_id\": \"xUolOnJHWhIO4YP8MozO\",\"code\": 0,\"msg\": \"success\",\"data\": {\"id\": \"58baa2866819481560f013ac\"}}";
         BizCommonEntity<Approve> bizCommonEntity = BizCommonEntity.fromJson(jsonResult, Approve.class);
-        Approve app = bizCommonEntity.getData();
         return bizCommonEntity;
     }
 

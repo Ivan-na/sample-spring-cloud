@@ -9,3 +9,5 @@ out
 gen
 /.project
 /.settings/
+/.classpath
+/target/

@@ -21,8 +21,8 @@ public abstract class CommonController<T> {
      * @author Created by ivan on 上午11:39 18-11-8.
      * <p>Locate runtime Class Type
      **/
-    @SuppressWarnings("unchecked")
-    Class getRuntimeClass() {
+    @SuppressWarnings("unchecked")	
+    Class<T> getRuntimeClass() {
         ParameterizedType pt = (ParameterizedType) this.getClass().getGenericSuperclass();
         return (Class<T>) pt.getActualTypeArguments()[0];
     }

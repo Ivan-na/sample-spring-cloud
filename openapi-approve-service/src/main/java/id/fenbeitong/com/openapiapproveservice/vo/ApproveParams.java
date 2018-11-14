@@ -2,7 +2,6 @@ package id.fenbeitong.com.openapiapproveservice.vo;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import id.fenbeitong.com.openapicommons.vo.BizCommonParams;
 
 import java.util.List;
 
@@ -35,8 +34,7 @@ public class ApproveParams {
     public void setTripList(List<TripList> tripList) {
         this.tripList = tripList;
     }
-
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+    
     public static class Apply {
         private int type;
         private int flowType;
@@ -88,7 +86,6 @@ public class ApproveParams {
         }
     }
 
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     public static class TripList {
         private int type;
         private String startCityId;
