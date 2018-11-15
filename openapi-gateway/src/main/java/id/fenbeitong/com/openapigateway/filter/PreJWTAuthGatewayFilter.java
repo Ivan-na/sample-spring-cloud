@@ -42,7 +42,7 @@ public class PreJWTAuthGatewayFilter extends AbstractGatewayFilterFactory<PreJWT
                 return response.writeWith(Mono.just(bodyDataBuffer));
             } else {
                 JWTUtils.JWTResult jwtResult = JWTUtils.getInstance().checkToken(token);
-                if (jwtResult.isStatus()) {
+                if (jwtResult.getStatus()) {
                     return chain.filter(exchange);
                 } else {
                     String warningStr = JSONUtils.toJson(ResponseData.fail(jwtResult.getCode(), jwtResult.getMsg()));

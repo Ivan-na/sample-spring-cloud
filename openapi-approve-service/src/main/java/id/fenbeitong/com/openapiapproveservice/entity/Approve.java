@@ -9,7 +9,7 @@ import id.fenbeitong.com.openapicommons.entity.BizCommonEntity;
  * @version 1.0
  * Created by ivan on 18-11-14 - 下午5:45.
  **/
-public class Approve extends BizCommonEntity<Approve> {
+public class Approve {
     private String id;
 
     public Approve() {

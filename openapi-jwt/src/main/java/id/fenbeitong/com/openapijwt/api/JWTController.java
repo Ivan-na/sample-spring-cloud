@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.*;
  * @version 1.0
  **/
 @RestController
-@RequestMapping("/jwt")
 @Api("JWT")
 @RefreshScope
 public class JWTController extends CommonController<JWTController> {

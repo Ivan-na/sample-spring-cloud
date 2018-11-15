@@ -1,14 +1,16 @@
 spring:
   application:
-    name: JWT
+    name: jwt-auth
+  profiles:
+    active: test
   cloud:
     config:
       uri: http://localhost:8888
-  rabbitmq:
-    host: 172.17.0.4
-    port: 5672
-    username: guest
-    password: guest
+#  rabbitmq:
+#    host: 172.17.0.4
+#    port: 5672
+#    username: guest
+#    password: guest
 #management:
 #  endpoints:
 #    web:

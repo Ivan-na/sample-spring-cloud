@@ -1,0 +1,22 @@
+server:
+  port: 8092
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  application:
+    name: biz-approve
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:8765/eureka/
+host:
+  saas:
+    center: http://hl-test.fenbeijinfu.com
+  hyperloop: http://usercenter-test.fenbeijinfu.com

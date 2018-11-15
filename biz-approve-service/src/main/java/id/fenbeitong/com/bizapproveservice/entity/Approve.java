@@ -23,7 +23,4 @@ public class Approve {
         this.id = id;
     }
 
-    public void coverT() {
-
-    }
 }

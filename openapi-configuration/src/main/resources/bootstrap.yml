@@ -1,22 +1,26 @@
 server:
   port: 8888
 spring:
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/Ivan-na/config-repo
-          skipSslValidation: true
-          timeout: 5
-          username: ivandjp@163.com
-          password: 1qaw3@123
-    bus:
-      enabled: true
-  rabbitmq:
-    host: 172.17.0.4
-    port: 5672
-    username: guest
-    password: guest
+        native:
+          search-locations: /home/ivan/git-repo/config-repo
+#        git:
+#          uri: https://github.com/Ivan-na/config-repo
+#          skipSslValidation: true
+#          timeout: 5
+#          username: ivandjp@163.com
+#          password: 1qaw3@123
+#    bus:
+#      enabled: true
+#  rabbitmq:
+#    host: 172.17.0.4
+#    port: 5672
+#    username: guest
+#    password: guest
 #spring:
 #  cloud:
 #    config:

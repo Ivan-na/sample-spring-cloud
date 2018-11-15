@@ -12,7 +12,6 @@ import java.util.List;
  * @author Created by ivan on 下午7:37 18-11-13.
  * @version 1.0
  **/
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class ApproveParams {
     private Apply apply;
     private List<TripList> tripList;
@@ -36,7 +35,6 @@ public class ApproveParams {
         this.tripList = tripList;
     }
 
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     public static class Apply {
         private int type;
         private int flowType;
@@ -88,7 +86,6 @@ public class ApproveParams {
         }
     }
 
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     public static class TripList {
         private int type;
         private String startCityId;
