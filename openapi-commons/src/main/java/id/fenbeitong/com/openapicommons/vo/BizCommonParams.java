@@ -21,7 +21,8 @@ public class BizCommonParams<T> extends CommonParams<T> implements java.io.Seria
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private T data;
+    private String requestId;
+    private T data;
 
 	public T getData() {
 		return data;

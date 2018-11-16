@@ -26,7 +26,6 @@ public class ApproveApi extends CommonController<ApproveApi> {
     @ApiOperation(value = "Check Env tag", notes = "env tag")
     @PostMapping("/create")
     public BizCommonEntity<Approve> createApprove(@RequestBody BizCommonParams<ApproveParams> bizCommonParams) {
-        //String jsonParma = bizCommonParams.toJsonWithLowerCase(ApproveParams.class);
         String jsonParma = JSONUtils.toJson(bizCommonParams.getData());
         LOGGER.info(jsonParma);
         // CALL SERVICE
